@@ -26,9 +26,10 @@ namespace CS321_W2D1_BlogAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // TODO: configure PostService so it will be injected into controller
+            services.AddSingleton<IPostService, IPostService>(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
